@@ -1,7 +1,7 @@
 {
   "name": "retyped-google-apps-script-tsd-ambient",
   "description": "TypeScript typings for google-apps-script",
-  "version": "2015-11-12-0",
+  "version": "0.0.0-0",
   "licence": "MIT",
   "repository": "https://github.com/retyped/google-apps-script-tsd-ambient",
   "typescript": {
