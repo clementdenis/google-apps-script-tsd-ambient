@@ -51,6 +51,7 @@ declare module GoogleAppsScript {
       computeRsaSha256Signature(value: string, key: string, charset: Charset): Byte[];
       formatDate(date: Date, timeZone: string, format: string): string;
       formatString(template: string, ...args: Object[]): string;
+      getUuid(): string;
       newBlob(data: Byte[]): Base.Blob;
       newBlob(data: Byte[], contentType: string): Base.Blob;
       newBlob(data: Byte[], contentType: string, name: string): Base.Blob;
