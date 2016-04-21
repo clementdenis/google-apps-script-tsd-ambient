@@ -463,6 +463,19 @@ declare module GoogleAppsScript {
     }
 
     /**
+     * Create, access and modify named ranges in a spreadsheet. 
+     * Named ranges are ranges that have associated string aliases. 
+     * They can be viewed and edited via the Sheets UI under the Data > Named ranges... menu.
+     */
+    export interface NamedRange {
+      getName():	String;
+      getRange(): Range;
+      remove(): void;
+      setName(name: string): NamedRange;
+      setRange(range: Range): NamedRange;
+    }
+
+    /**
      * 
      * Deprecated. For spreadsheets created in the newer version of Google Sheets, use the more powerful
      *      Protection class instead. Although this class is deprecated, it will remain
@@ -539,6 +552,7 @@ declare module GoogleAppsScript {
       removeEditors(emailAddresses: String[]): Protection;
       setDescription(description: string): Protection;
       setDomainEdit(editable: boolean): Protection;
+      setNamedRange(namedRange: NamedRange): Protection;
       setRange(range: Range): Protection;
       setRangeName(rangeName: string): Protection;
       setUnprotectedRanges(ranges: Range[]): Protection;
@@ -718,6 +732,7 @@ declare module GoogleAppsScript {
       getMaxColumns(): Integer;
       getMaxRows(): Integer;
       getName(): string;
+      getNamedRanges(): NamedRange[];
       getParent(): Spreadsheet;
       getProtections(type: ProtectionType): Protection[];
       getRange(row: Integer, column: Integer): Range;
@@ -728,6 +743,7 @@ declare module GoogleAppsScript {
       getSheetId(): Integer;
       getSheetName(): string;
       getSheetValues(startRow: Integer, startColumn: Integer, numRows: Integer, numColumns: Integer): Object[][];
+      getTabColor(): string;
       hideColumn(column: Range): void;
       hideColumns(columnIndex: Integer): void;
       hideColumns(columnIndex: Integer, numColumns: Integer): void;
@@ -764,6 +780,7 @@ declare module GoogleAppsScript {
       setFrozenRows(rows: Integer): void;
       setName(name: string): Sheet;
       setRowHeight(rowPosition: Integer, height: Integer): Sheet;
+      setTabColor(string): Sheet;
       showColumns(columnIndex: Integer): void;
       showColumns(columnIndex: Integer, numColumns: Integer): void;
       showRows(rowIndex: Integer): void;
@@ -815,6 +832,7 @@ declare module GoogleAppsScript {
       getLastColumn(): Integer;
       getLastRow(): Integer;
       getName(): string;
+      getNamedRanges(): NamedRange[];
       getNumSheets(): Integer;
       getOwner(): Base.User;
       getProtections(type: ProtectionType): Protection[];
